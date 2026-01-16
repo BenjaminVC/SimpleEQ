@@ -97,7 +97,12 @@ void SimpleEQAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlo
     // initialisation that you need..
     
     juce::dsp::ProcessSpec spec;
+    
     spec.maximumBlockSize = samplesPerBlock;
+
+    spec.numChannels = 1;
+
+    spec.sampleRate = sampleRate;
 }
 
 void SimpleEQAudioProcessor::releaseResources()
